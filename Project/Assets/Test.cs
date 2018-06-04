@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    string manifestPath = string.Empty;
     public AssetBundle manifestLoader = null;
     public AssetBundleManifest assetManifest = null;
     public Dictionary<string, AssetBundle> abDic = new Dictionary<string, AssetBundle>();
+
+    string manifestPath = string.Empty;
     bool isLoadManifestFinished = false;
 
     // Use this for initialization
