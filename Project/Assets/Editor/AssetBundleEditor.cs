@@ -15,11 +15,12 @@ public class AssetBundleEditor
     {
         outPath = IPathTools.GetEditeABOutPath();
 
-        //判断给定的目录是否存在
+        //判断给定的路径是否存在，注意只能判断路径（即文件夹）， 不具体到文件！！！
         if (Directory.Exists(outPath))
         {
             DirectoryInfo di = new DirectoryInfo(outPath);
             //指定是否删除子目录和文件,若为 true，则删除此目录、其子目录以及所有文件
+            //若为 false,目录不为空会报异常，即只能当目录为空的时候可以传 false
             di.Delete(true);
         }
 
