@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 33218456
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: load.ab
+      Dependencies:
+        Dependency_0: material.ab
+    Info_1:
+      Name: material.ab
+      Dependencies:
+        Dependency_0: texture.ab
+    Info_2:
+      Name: texture.ab
+      Dependencies: {}

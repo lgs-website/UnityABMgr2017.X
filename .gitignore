@@ -1,0 +1,28 @@
+<code># =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+FtpBackup/
+xCode_project/
+AssetBundles/
+Delete/
+Gen/
+.vs/
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.txt
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+Delete.meta
+NetworkLog.log
