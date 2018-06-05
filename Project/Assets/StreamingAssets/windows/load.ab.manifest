@@ -3,7 +3,7 @@ CRC: 908583264
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 67e5fe653afae116e3c5df7efbcff210
+    Hash: e6348cfdcfac9f3bf6f52c74f092e746
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0615fdd8182050e228ba12bfa176028d
@@ -26,4 +26,4 @@ ClassTypes:
 Assets:
 - Assets/Art/Load/Cube.prefab
 Dependencies:
-- D:/LgsTest/UnityResMrg2017/Project/New Unity Project/Assets/StreamingAssets/windows/material.ab
+- D:/LgsTest/UnityResMgr2017/Project/Assets/StreamingAssets/windows/material.ab

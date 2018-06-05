@@ -124,7 +124,7 @@ public class IABManager : MonoBehaviour
     Dictionary<string, IABRelationManager> preLoadHelper = new Dictionary<string, IABRelationManager>();
     //已经加载完的AB
     Dictionary<string, IABRelationManager> loadedHelper = new Dictionary<string, IABRelationManager>();
-    //已经从AB中load出的具体资源
+    //已经从AB中load出的具体资源, key是bundle name
     Dictionary<string, AssetResObj> loadObjs = new Dictionary<string, AssetResObj>();
     //AB加载完的回调
     Dictionary<string, LoadAssetBundleCallbackManager> loadBundleCallback = new Dictionary<string, LoadAssetBundleCallbackManager>();
@@ -173,6 +173,7 @@ public class IABManager : MonoBehaviour
         return path;
     }
 
+    //加载一个具体资源时，先从loadObjs中找，如果没有的话再从loadedHelper中找，再没有的话再根据AssetBundle名字和地址用WWW下载
     public void LoadSingleObject(string bundleName, string resName, LoadObjectCallBack callback)
     {
         //表示是否已近缓存了物体
@@ -194,7 +195,10 @@ public class IABManager : MonoBehaviour
         }
         else
         {
-            //StartCoroutine(Loa)
+            StartCoroutine(LoadAssetBundle(bundleName, (tmpBundleName) => 
+            {
+                LoadObjectFromBundle(bundleName, resName, callback);
+            }));
         }
 
     }

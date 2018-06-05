@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2348736473
+CRC: 3834929380
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 54db47619975c8212ba2d7c4ecbd7262
+    Hash: 6b1541bcf1fbe6ae3147b8e430d2c835
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8d068741ae817c9b5c92580f37de87e3
@@ -17,5 +17,6 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Art/Material/m_Material.mat
+- Assets/Art/Material/m_Material_2.mat
 Dependencies:
-- D:/LgsTest/UnityResMrg2017/Project/New Unity Project/Assets/StreamingAssets/windows/texture.ab
+- D:/LgsTest/UnityResMgr2017/Project/Assets/StreamingAssets/windows/texture.ab

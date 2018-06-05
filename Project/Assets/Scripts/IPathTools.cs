@@ -4,6 +4,9 @@ using UnityEngine;
 using System.IO;
 using System;
 
+/// <summary>
+/// 工具类
+/// </summary>
 public class IPathTools
 {
     public static string GetPlatformFoldName(RuntimePlatform platform)

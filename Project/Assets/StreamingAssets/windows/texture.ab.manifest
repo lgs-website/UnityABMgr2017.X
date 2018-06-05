@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3041534943
+CRC: 348105547
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 49ccd37901e843befd5cb102c5c3e5df
+    Hash: 77db85c0b494b6549ddfd9e6518c7675
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4cd0a5558493b0679e071c141fc729a3
@@ -13,4 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Art/Texture/detail.jpg
+- Assets/Art/Texture/detail_2.png
 Dependencies: []
