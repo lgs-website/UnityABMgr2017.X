@@ -30,7 +30,7 @@ public class TestLoad : MonoBehaviour
 
         if (GUI.Button(new Rect(20, 200, 200, 50), "DestoryCube"))
         {
-
+            DisposeCube();
         }
     }
 
@@ -64,6 +64,6 @@ public class TestLoad : MonoBehaviour
 
     void DisposeCube()
     {
-
+        IABManager.instance.DisposeBundle("load.ab");
     }
 }

@@ -21,14 +21,18 @@ public class AssetObj
     public AssetObj(Object _obj)
     {
         obj = _obj;
+        Debug.Log("AssetObj Name = " + _obj.name);
     }
-
-
 
     public void ReleaseObj()
     {
         if (null != obj)
+        {
+            //从内存卸载指定的资源
             Resources.UnloadAsset(obj);
+
+            Debug.Log("ReleaseObj Name = " + obj.name);
+        }
     }
 }
 
@@ -37,6 +41,7 @@ public class AssetObj
 /// </summary>
 public class AssetResObj
 {
+    //key : AssetBundle Name    value : 具体的资源
     Dictionary<string, AssetObj> dicAssetObj;
 
     public AssetResObj(string name, AssetObj _assetObj)
@@ -44,12 +49,14 @@ public class AssetResObj
         if (null == dicAssetObj)
             dicAssetObj = new Dictionary<string, AssetObj>();
         dicAssetObj.Add(name, _assetObj);
+        Debug.Log("AssetResObj Key = " + name);
     }
 
     public void AddResObj(string name, AssetObj _assetObj)
     {
-        if (null != dicAssetObj && dicAssetObj.ContainsKey(name))
+        if (null != dicAssetObj && !dicAssetObj.ContainsKey(name))
             dicAssetObj.Add(name, _assetObj);
+        Debug.Log("AddResObj Key = " + name);
     }
 
     /// <summary>
@@ -62,6 +69,7 @@ public class AssetResObj
         {
             AssetObj obj = dicAssetObj[name];
             obj.ReleaseObj();
+            //dicAssetObj.Remove(name);
         }
         else
         {
@@ -89,6 +97,9 @@ public class AssetResObj
     }
 }
 
+/// <summary>
+/// 一个AssetBundle对应一个LoadAssetBundleCallbackManager
+/// </summary>
 public class LoadAssetBundleCallbackManager
 {
     string bundleName = null;
@@ -124,7 +135,7 @@ public class IABManager : MonoBehaviour
     Dictionary<string, IABRelationManager> preLoadHelper = new Dictionary<string, IABRelationManager>();
     //已经加载完的AB
     Dictionary<string, IABRelationManager> loadedHelper = new Dictionary<string, IABRelationManager>();
-    //已经从AB中load出的具体资源, key是bundle name
+    //已经从AB中load出的具体资源, key : AssetBundle Name   value : 资源
     Dictionary<string, AssetResObj> loadObjs = new Dictionary<string, AssetResObj>();
     //AB加载完的回调
     Dictionary<string, LoadAssetBundleCallbackManager> loadBundleCallback = new Dictionary<string, LoadAssetBundleCallbackManager>();
@@ -195,7 +206,7 @@ public class IABManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(LoadAssetBundle(bundleName, (tmpBundleName) => 
+            StartCoroutine(LoadAssetBundle(bundleName, (tmpBundleName) =>
             {
                 LoadObjectFromBundle(bundleName, resName, callback);
             }));
